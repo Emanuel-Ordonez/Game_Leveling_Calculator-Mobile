@@ -121,7 +121,7 @@
         app:layout_constraintTop_toBottomOf="@+id/numPointsNeededText" />
 
     <EditText
-        android:id="@+id/numPointsNeeded"
+        android:id="@+id/numPointsObtainedInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -132,10 +132,10 @@
         app:layout_constraintTop_toBottomOf="@+id/numPointsObtainedText" />
 
     <TextView
-        android:id="@+id/."
+        android:id="@+id/youneed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="88dp"
         android:text="You need:"
         android:textColor="#000000"
         android:textSize="24sp"
@@ -148,12 +148,23 @@
         android:id="@+id/statsCalculatedOutput"
         android:layout_width="62dp"
         android:layout_height="19dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="60dp"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/." />
+        app:layout_constraintTop_toBottomOf="@+id/youneed" />
+
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Calculate"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,7 +2,7 @@ package com.example.cs481projectapp.cogfacilities;
 
 import java.util.ArrayList;
 
-public class SellbotFactory {
+public class SellbotFactory implements ICogFacility {
     public String calculateStats(int totalObtained, int totalNeeded) {
 
         ArrayList<Integer> factories = new ArrayList<Integer>();

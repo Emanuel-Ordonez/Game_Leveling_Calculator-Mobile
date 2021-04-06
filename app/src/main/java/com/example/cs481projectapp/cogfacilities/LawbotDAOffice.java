@@ -2,7 +2,7 @@ package com.example.cs481projectapp.cogfacilities;
 
 import java.util.ArrayList;
 
-public class LawbotDAOffice {
+public class LawbotDAOffice implements ICogFacility {
     public String calculateStats(int totalObtained, int totalNeeded) {
 
         ArrayList<Integer> offices = new ArrayList<Integer>();

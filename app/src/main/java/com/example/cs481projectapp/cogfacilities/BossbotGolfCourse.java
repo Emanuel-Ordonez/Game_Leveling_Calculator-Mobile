@@ -2,7 +2,7 @@ package com.example.cs481projectapp.cogfacilities;
 
 import java.util.ArrayList;
 
-public class BossbotGolfCourse {
+public class BossbotGolfCourse implements ICogFacility {
 
     public String printStats(ArrayList<Integer> nums){
         //TEST:

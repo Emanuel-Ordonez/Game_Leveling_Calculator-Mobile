@@ -2,7 +2,7 @@ package com.example.cs481projectapp.cogfacilities;
 
 import java.util.ArrayList;
 
-public class CashbotMint {
+public class CashbotMint implements ICogFacility{
 
     int x = 0, y = 0, z = 0; //temporary variables
     int a = 0, b = 0, c = 0;
