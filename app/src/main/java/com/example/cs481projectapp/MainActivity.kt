@@ -9,7 +9,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_calculator)
 
-        val intent = Intent(this, Calculator::class.java);
+        val intent = Intent(this, CalculatorActivity::class.java);
         startActivity(intent);
     }
 }
