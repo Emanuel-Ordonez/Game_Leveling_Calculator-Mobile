@@ -52,7 +52,6 @@ public class BossbotGolfCourse implements ICogFacility {
         golfCourses.add(x); //number of back nines added
         golfCourses.add(y); //number of middle sixes added
         golfCourses.add(z); //number of front threes added
-        this.printStats(golfCourses);
         return this.printStats(golfCourses);
     }
         /*

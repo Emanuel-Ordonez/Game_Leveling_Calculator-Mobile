@@ -13,8 +13,9 @@ class CalculatorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calculator)
 
-        var cogTypeChosen: String = ""
+
         val cogs = arrayOf("Bossbot", "Lawbot", "Cashbot", "Sellbot")
+        var cogTypeChosen: String= cogs[0]
         val cogTypeSpinner = findViewById<Spinner>(R.id.cogTypeSpinner)
 
         //cogTypeSpinner stuff keeps breaking everything. SOS!
@@ -22,28 +23,30 @@ class CalculatorActivity : AppCompatActivity() {
         cogTypeSpinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 if (view != null) {
-                    Toast.makeText(view.context, cogTypeSpinner.selectedItemPosition, Toast.LENGTH_LONG).show()
+                    Toast.makeText(view.context, cogTypeSpinner.selectedItemPosition.toString(), Toast.LENGTH_LONG).show()
                     cogTypeChosen = cogTypeSpinner.selectedItem.toString()
                 };
             }
-            override fun onNothingSelected(p0: AdapterView<*>?) {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
             }
         }
 
-        val numPointsObtained = findViewById<EditText>(R.id.numPointsObtainedInput).toString()
-        val numPointsNeeded = findViewById<EditText>(R.id.numPointsNeededInput).toString()
+        val numPointsObtained = findViewById<EditText>(R.id.numPointsObtainedInput)
+        val numPointsNeeded = findViewById<EditText>(R.id.numPointsNeededInput)
         val pointsCalculated = findViewById<TextView>(R.id.statsCalculatedOutput)
         val calculateButton = findViewById<Button>(R.id.calculateButton)
 
         calculateButton.setOnClickListener {
-            val obtained = Integer.parseInt(numPointsObtained)
-            val needed = Integer.parseInt(numPointsNeeded)
-            pointsCalculated.text = findCogSuit(cogTypeChosen, needed, obtained)
+            val obtained = Integer.parseInt(numPointsObtained.text.toString())
+            val needed = Integer.parseInt(numPointsNeeded.text.toString())
+            //Toast.makeText(applicationContext, cogTypeChosen, Toast.LENGTH_LONG).show()
+            pointsCalculated.text = findCogSuit(cogTypeChosen, obtained, needed)
         }
     }
 
-    public fun findCogSuit(cog: String, needed: Int, obtained: Int): String{
+    private fun findCogSuit(cog: String,  obtained: Int, needed: Int): String{
         val icogfacility: ICogFacility
+
         when(cog){
             "Bossbot" -> icogfacility = BossbotGolfCourse()
             "Lawbot" -> icogfacility = LawbotDAOffice()
