@@ -23,7 +23,6 @@ class CalculatorActivity : AppCompatActivity() {
         cogTypeSpinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 if (view != null) {
-                    Toast.makeText(view.context, cogTypeSpinner.selectedItemPosition.toString(), Toast.LENGTH_LONG).show()
                     cogTypeChosen = cogTypeSpinner.selectedItem.toString()
                 };
             }
